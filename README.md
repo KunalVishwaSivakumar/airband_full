@@ -124,13 +124,4 @@ npm install
 npm run dev
 ```
 
----
-
-## 📬 Need help again?
-Just ask me:
-- “make home dynamic”
-- “fix backend”
-- “give me full zip”
-- “add breathing model”
-- anything else 🚀
 
