@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 215 100% 6%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 33% 10%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 33% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 199 100% 50%;
+    --primary-foreground: 215 100% 6%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 15%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 199 100% 50%;
+    --accent-foreground: 215 100% 6%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 210 40% 98%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 215 100% 6%;
+
+    --border: 217 33% 20%;
+    --input: 217 33% 20%;
+    --ring: 199 100% 50%;
+
+    --radius: 1rem;
+
+    --gradient-primary: linear-gradient(135deg, hsl(215 100% 6%), hsl(199 100% 35%));
+    --gradient-glow: linear-gradient(135deg, hsl(199 100% 50% / 0.2), hsl(199 100% 60% / 0.1));
+    --glow-primary: 0 0 40px hsl(199 100% 50% / 0.4);
+    --glow-strong: 0 0 60px hsl(199 100% 50% / 0.6);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(215 100% 6%), hsl(210 100% 12%));
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--glow-primary);
+  }
+  
+  .glow-strong {
+    box-shadow: var(--glow-strong);
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .animate-breathing {
+    animation: breathing 4s ease-in-out infinite;
+  }
+  
+  .animate-wave {
+    animation: wave 2s ease-in-out infinite;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 20px hsl(199 100% 50% / 0.3);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 40px hsl(199 100% 50% / 0.6);
+  }
+}
+
+@keyframes breathing {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+}
+
+@keyframes wave {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
